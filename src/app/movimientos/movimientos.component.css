@@ -1,0 +1,28 @@
+.titularTipoTres {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+
+.titularTipoTres .subtitular span {
+    font-family: "Prelo-Book";
+    font-size: 14pt;
+    line-height: pt;
+    color: #0F265C;
+}
+
+
+.boton-amarillo {
+    height: 40px;
+    width: 80px;
+    font-family: "Prelo-Book", serif;
+    background-color: #FFDD00;
+    font-size: 14px;
+    color: #0F265C;
+    transition: 0.5s all;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: none !important;
+  }

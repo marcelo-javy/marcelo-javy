@@ -1,0 +1,105 @@
+<br>
+<br>
+<div class="row">
+    <div class="col-xs-10 col-md-12 col-lg-12 col-xl-12 offset-xs-1">
+        <div class="titularTipoTres">
+            <div class="subtitular">
+                <span>
+                    <h3>Detalle movimientos</h3>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form id="reportes" name="reportes" [formGroup]="fgpReportes">
+    <div class="row">
+        <div class="col-sm">
+            <div class="bp-form-group">
+                <label for="fechaDesdeLb">Fecha desde &nbsp; &nbsp; </label>
+                <mat-form-field class="example-full-width mat-form-padding" floatLabel="never">
+                    <input matInput formControlName="fechaDesde" onPaste="return false" maxlength="10" minlength="10"
+                        [matDatepicker]="picker" required [max]="fechaMaximaDes" [min]="fechaMinimaDes"
+                        placeholder="DD/MM/AAAA" (keyup)="limpiar()">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-error *ngIf="fechaDesde.touched && fechaDesde.hasError('required')">
+                    Campo obligatorio
+                </mat-error>
+                <mat-error *ngIf="fechaDesde.invalid && !fechaDesde.hasError('required')">
+                    Los datos ingresados son incorrectos
+                </mat-error>
+
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="bp-form-group">
+                <label for="fechaHastaLb">Fecha hasta &nbsp; &nbsp;</label>
+                <mat-form-field class="example-full-width mat-form-padding" floatLabel="never">
+                    <input matInput formControlName="fechaHasta" onPaste="return false" maxlength="10" minlength="10"
+                        [matDatepicker]="picker1" required [max]="fechaMaximaHas" [min]="fechaMinimaHas"
+                        placeholder="DD/MM/AAAA"  (keyup)="limpiar()">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+                <mat-error *ngIf="fechaHasta.touched && fechaHasta.hasError('required')">
+                    Campo obligatorio
+                </mat-error>
+                <mat-error *ngIf="fechaHasta.invalid && !fechaHasta.hasError('required')">
+                    Los datos ingresados son incorrectos
+                </mat-error>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:10px;">
+        <div class="container text-center container-pie-top">
+            <button class="boton-amarillo" mat-button mat-raised-button [disabled]="!fgpReportes.valid"
+                (click)="consultarMovimientos()">Consultar</button>
+        </div>
+    </div>
+    <div *ngIf="mostrarDetalle">
+
+        <table class="table table-sm">
+            <tbody>
+                <tr>
+                    <th scope="row">febrero 09</th>
+                </tr>
+                <tr>
+                    <td>Consumo via</td>
+                    <td>-200 USD</td>
+                </tr>
+                <tr>
+                    <td>Saldo</td>
+                    <td>800 USD</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">febrero 08</th>
+                </tr>
+                <tr>
+                    <td>Pago iess</td>
+                    <td>-100 USD</td>
+                </tr>
+                <tr>
+                    <td>Saldo</td>
+                    <td>700 USD</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">febrero 07</th>
+                </tr>
+                <tr>
+                    <td>Pago EPMS TRF</td>
+                    <td>-10 USD</td>
+                </tr>
+                <tr>
+                    <td>Saldo</td>
+                    <td>690 USD</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</form>

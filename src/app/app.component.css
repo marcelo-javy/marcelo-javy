@@ -1,0 +1,14 @@
+#header {
+    height: 100px;
+    border:solid;
+    border-color: #eee;
+  }
+
+#menu {
+    border:solid;
+    border-color: #eee;
+  }
+  #body {
+    height: 500px;
+    background-color: #eee;
+  }

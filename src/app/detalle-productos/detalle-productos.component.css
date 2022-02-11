@@ -1,0 +1,21 @@
+.titularTipoTres {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+
+.titularTipoTres .subtitular span {
+    font-family: "Prelo-Book";
+    font-size: 14pt;
+    line-height: pt;
+    color: #0F265C;
+}
+
+.main-container{
+    margin-top: 14px;
+  }
+  
+.label-default{
+    float: right;
+}
